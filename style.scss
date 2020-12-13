@@ -110,19 +110,26 @@ body{
 
 .slider .imgs {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    // transition: transform 0.5s ease-in-out;
 }
 
 .slider .img {
-    min-width: 100vw;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.slider .img.smooth {
+    transition: all 0.5s cubic-bezier(0.53, 0.52, 0.46, 0.48);
 }
 
 .slider .img img{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
 .slider .arrow{
@@ -136,7 +143,7 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 2;
+    z-index: 100000;
 }
 
 .slider .arrow.none{

@@ -111,28 +111,26 @@ body {
 
 .slider .imgs {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  height: 100%;
 }
 
 .slider .img {
-  min-width: 100vw;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.slider .img.smooth {
+  -webkit-transition: all 0.5s cubic-bezier(0.53, 0.52, 0.46, 0.48);
+  transition: all 0.5s cubic-bezier(0.53, 0.52, 0.46, 0.48);
 }
 
 .slider .img img {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
 .slider .arrow {
@@ -152,7 +150,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
-  z-index: 2;
+  z-index: 100000;
 }
 
 .slider .arrow.none {
